@@ -1,0 +1,80 @@
+.tb{
+    max-height: 20;
+
+    border: none;
+    display: inline-block;
+    height: 36px;
+    width: 260px;
+    line-height: 36px;
+    font-size: 16px;
+    outline: none;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    color: #fff;
+    background-color: #044DA0;
+    text-align: center;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+.tb:hover{
+    background-color: #962D32;
+}
+.none{
+    display: none;
+}
+.main{
+ 
+    border: none;
+    display: inline-block;
+    height: 150px;
+    width: 400px;
+    line-height: 36px;
+    font-size: 16px;
+    font-family:serif;
+    outline: none;
+    margin-left: 270px;
+    vertical-align: middle;
+    background-color: #5C3D3D;
+     text-align: center;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+.list{
+    
+       border: none;
+       display: inline-block;
+       height: 500px;
+       width: 400px;
+       line-height: 36px;
+       font-size: 16px;
+       font-family:serif;
+       outline: none;
+       margin-left: 270px;
+       vertical-align: middle;
+       background-color: #2D3746;
+        text-align: center;
+       letter-spacing: .5px;
+       cursor: pointer;
+
+   }
+   .users{
+    
+       border: none;
+       display: inline-block;
+       height: 500px;
+       width: 400px;
+       line-height: 36px;
+       font-size: 16px;
+       font-family:serif;
+       outline: none;
+       margin-left: 270px;
+       vertical-align: middle;
+       background-color: #C4ABAB;
+        text-align: center;
+       letter-spacing: .5px;
+       cursor: pointer;
+   }
+   .Counter{
+       color:white;
+   }
