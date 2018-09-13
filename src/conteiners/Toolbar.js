@@ -11,7 +11,6 @@ import {Switch} from 'react-router';
  class Toolbar extends Component{
 
     render(){
-   
 
         return(
             <div>
@@ -28,8 +27,7 @@ import {Switch} from 'react-router';
                     <button onClick={this.props.AsyncInc}>Async Inc</button>
                 </div>
                 <div className={this.props.toolbar==="LIST"?"list":"none"}>
-                    <button onClick={this.props.DeletePh}>DeleteByName</button>
-                    <button onClick={this.props.AddPh}>AddNewImage</button>
+                
                     <PhotoList  />
                 </div>
                 <div className={this.props.toolbar==="USERS"?"users":"none"}>
@@ -77,11 +75,13 @@ function mapStateToProps (state) {
             }, 1000)
         },
         AddPh: () => {
-         
+            dispatch({type:"De"});
+            dispatch({type:"Add"});
             dispatch({type:"AddPh"});
         },
         DeletePh: () => {
-         
+            dispatch({type:"De"});
+            dispatch({type:"Add"});
             dispatch({type:"DeletePh"});
         },
 
