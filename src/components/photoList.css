@@ -1,27 +1,10 @@
 .photoList{
-    height: 460px;
+    height: 440px;
     width: 400px;        
     overflow: auto; 
 }
 .delete{
-    max-height: 20;
-
-    border: none;
-    display: inline-block;
     height: 36px;
-    width: 120px;
-    line-height: 36px;
-    font-size: 16px;
-    outline: none;
-    padding: 0 2rem;
-    text-transform: uppercase;
-    vertical-align: middle;
-    color: #fff;
-    background-color: #0481A0;
-    text-align: center;
-    letter-spacing: .5px;
-    cursor: pointer;
-}
-.delete:hover{
-    background-color: #DDCACB;
+    width: 36px;
+  
 }

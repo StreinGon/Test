@@ -1,6 +1,7 @@
 import React  from 'react'
-
+import TextField from '@material-ui/core/TextField';
 import { withRouter } from 'react-router-dom'
+import Button from '@material-ui/core/Button';
 class Form extends React.Component {
     constructor(props) {
       super(props);
@@ -41,15 +42,16 @@ class Form extends React.Component {
     render() {
       return (
         <form onSubmit={this.onCl}>
-          <p><label> заголовок: <input type="text" name="zag" value={this.state.zag}
-                           onChange={this.onOpisChange}/></label></p>
-          <p><label> описание: <input type="text" name="opis" value={this.state.opis}
-                            onChange={this.onZagChange}/></label></p>
-          <p><label> цена: <input type="text" name="cost" value={this.state.cost}
-                            onChange={this.onCostChange}/></label></p>
-          <p><label> кол-во: <input type="text" name="count" value={this.state.count}
-                            onChange={this.onCountChange}/></label></p>
-          <p><input type="submit" value="Submit" /></p>
+    
+          <TextField  label="Заголовок" name="zag" value={this.state.zag}
+                           onChange={this.onOpisChange}/><br/>
+          <TextField label="Описание" name="opis" value={this.state.opis}
+                            onChange={this.onZagChange}/><br/>
+          <TextField label="Цена" name="cost" value={this.state.cost}
+                            onChange={this.onCostChange}/><br/>
+          <TextField label="Количество" name="count" value={this.state.count}
+                            onChange={this.onCountChange}/><br/>
+          <Button type="submit"  >Подтвердить</Button>
         
         </form>
       );

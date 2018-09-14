@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import "./photoList.css"
 
+import AddIcon from '@material-ui/icons/Add';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 class photoList extends Component {
     constructor(props){
         super(props);
@@ -23,7 +27,7 @@ class photoList extends Component {
         this.AddPh=this.AddPh.bind(this);
         this.DeletePh=this.DeletePh.bind(this);
     }
- 
+    
     DeletePh(){
         let img={title:prompt('Введите название')}      
         this.setState({ photos:this.state.photos.filter(photo=>photo.title!==img.title)})
@@ -41,6 +45,7 @@ class photoList extends Component {
         }
     }
     render() {
+      
         let check=this.state.photos
         let fixedPhoto=check.map(function(item,index){
             return(
@@ -55,14 +60,14 @@ class photoList extends Component {
         })
         return ( 
             <div>
-            <button onClick={this.DeletePh}>Delete</button>
-            <button onClick={this.AddPh}>Add</button>
+            <IconButton  variant="fab" color="primary"  onClick={this.DeletePh}><DeleteIcon /></IconButton>
+            <IconButton  variant="fab" color="primary"  onClick={this.AddPh}><AddIcon /></IconButton>
             <div className="photoList">{fixedPhoto}</div>
             </div>
         )
     }
 }  
  
- export default photoList;  
+ export default  (photoList);  
  
  
