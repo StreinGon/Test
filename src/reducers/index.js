@@ -1,12 +1,10 @@
+//React-redux
+import { combineReducers } from "redux";
+//Reducers
+import toolbar from "../reducers/toolbar";
+import counter from "../reducers/counter";
 
-  import { combineReducers } from 'redux'
-  import toolbar from '../reducers/toolbar'
-  import main from '../reducers/main'
-
-
-
-  export default combineReducers({
-    toolbar,
-    main,
-
-  })
+export default combineReducers({
+  toolbar,
+  counter
+});

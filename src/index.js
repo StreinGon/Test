@@ -1,25 +1,17 @@
-import React from 'react';
-import './index.css';
+//React-redux
+import React from "react";
+import { render } from "react-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+//Components,reducers,containers
+import App from "./containers/App";
+import reducer from "./reducers/index";
 
-import { render } from 'react-dom'
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import Toolbar from './conteiners/Toolbar'
-import reducer from './reducers/index'
-import { Provider } from 'react-redux'
-
-
-const store = createStore(reducer,applyMiddleware(thunk))
+const store = createStore(reducer);
 
 render(
-
   <Provider store={store}>
-      <Toolbar />
-
+    <App />
   </Provider>,
-  document.getElementById('root'),
-  console.log("refresh")
-
-)
-   
-
+  document.getElementById("root")
+);

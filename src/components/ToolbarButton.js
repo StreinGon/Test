@@ -1,37 +1,23 @@
-import React, { Component } from 'react'
-import Button from '@material-ui/core/Button';
-
-import { withStyles } from '@material-ui/core/styles';
-const styles = theme => ({
-    
-      Toolbutton: {
-        height: 40,
-        width: 200,
-        color: 'white',
-        borderRadius: 30,
-        margin:5,
-
-        background: 'red',
-        boxShadow: '0 10px 10px 10px rgba(255, 105, 135, .3)',
-      },
-    
-
-    });
+//react-redux
+import React, { Component } from "react";
+//material-ui
+import Button from "@material-ui/core/Button";
+import { withStyles } from "@material-ui/core/styles";
+//styles
+import toolbar_styles from "../styles/toolbar_styles";
 class ToolbarButton extends Component {
-
-render() {
-    const { str,OnBC,classes } = this.props
-    return ( 
-        <Button className={classes.Toolbutton}variant="raised"   onClick={OnBC}>
-        {
-            str
-        }
-        </Button >
-    )
+  render() {
+    const { buttonText, OnButtonClicked, classes } = this.props;
+    return (
+      <Button
+        className={classes.Toolbutton}
+        variant="raised"
+        onClick={OnButtonClicked}
+      >
+        {buttonText}
+      </Button>
+    );
+  }
 }
 
-
-}   
- 
- export default withStyles(styles)(ToolbarButton);  
-    
+export default withStyles(toolbar_styles)(ToolbarButton);

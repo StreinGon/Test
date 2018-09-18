@@ -1,73 +1,93 @@
-import React, { Component } from 'react'
-import "./photoList.css"
-
-import AddIcon from '@material-ui/icons/Add';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
+//react-redux
+import React, { Component } from "react";
+//material-ui
+import { withStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@material-ui/icons/Delete";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+//styles
+import "../styles/photoList.css";
+import photoList_styles from "../styles/photoList_styles";
+//photos
+import ArrayOfPhotos from "../photos/photos";
 
 class photoList extends Component {
-    constructor(props){
-        super(props);
-        this.state={
-            photos:[
-                {
-                    title: 'IMG1',
-                    Photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO5Gi3MseEYRvGb73iblkxeVqKEKLW1PRoERejdLDnDt1SG_hobg'
-                },
-                {
-                    title: 'IMG2',
-                    Photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYRqQpVc7E0heF5pKqOT1LKtESGjW65A80jJ_n8GfVg7azT-3c'
-                },
-                {
-                    title: 'IMG3',
-                    Photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuOBfpFrzQPJIHEaWnDF-iv_plAe2gk9pXt2tHCDtW8p6kMuBw'
-                }
-            ]
-        };
-        this.AddPh=this.AddPh.bind(this);
-        this.DeletePh=this.DeletePh.bind(this);
-    }
-    
-    DeletePh(){
-        let img={title:prompt('Введите название')}      
-        this.setState({ photos:this.state.photos.filter(photo=>photo.title!==img.title)})
-    }
-    AddPh(){
-        let img1={title:prompt('Введите название'),Photo:prompt('Введите url')}
-        if(img1.title!==""&&img1.Photo!==""&&img1.title!==null&&img1.Photo!==null){
- 
-        
-        this.setState({ photos: this.state.photos.concat(img1)});
-        }
-        else{
-          alert("Одно из значений введенно не корректно")
-           
-        }
-    }
-    render() {
-      
-        let check=this.state.photos
-        let fixedPhoto=check.map(function(item,index){
-            return(
-                <div key={index}>
+  constructor(props) {
+    super(props);
+    this.state = {
+      photos: ArrayOfPhotos
+    };
+    this.AddPhoto = this.AddPhoto.bind(this);
+    this.DeletePhoto = this.DeletePhoto.bind(this);
+  }
 
-                <p>{item.title}:</p>  
-
-                <img src={item.Photo} alt="Error"/>  
-                  
-                </div>  
-            )
-        })
-        return ( 
-            <div>
-            <IconButton  variant="fab" color="primary"  onClick={this.DeletePh}><DeleteIcon /></IconButton>
-            <IconButton  variant="fab" color="primary"  onClick={this.AddPh}><AddIcon /></IconButton>
-            <div className="photoList">{fixedPhoto}</div>
-            </div>
-        )
+  DeletePhoto(ttl) {
+    this.setState({
+      photos: this.state.photos.filter(photo => photo.title !== ttl)
+    });
+  }
+  AddPhoto() {
+    const img1 = {
+      title: prompt("Введите название"),
+      Photo: prompt("Введите url"),
+      content: prompt("Введите краткое описание")
+    };
+    if (
+      img1.content !== null &&
+      img1.content !== "" &&
+      img1.title !== "" &&
+      img1.Photo !== "" &&
+      img1.title !== null &&
+      img1.Photo !== null
+    ) {
+      this.setState({ photos: this.state.photos.concat(img1) });
+    } else {
+      alert("Одно из значений введенно не корректно");
     }
-}  
- 
- export default  (photoList);  
- 
- 
+  }
+  render() {
+    const { classes } = this.props;
+    const del = this.DeletePhoto;
+    const add = this.AddPhoto;
+    const check = this.state.photos;
+    const fixedPhotos = check.map(function(item, index) {
+      return (
+        <div key={index}>
+          <Card>
+            <img src={item.Photo} alt="Error" />
+            <CardContent>
+              <Typography gutterBottom variant="headline" component="h2">
+                {item.title}
+              </Typography>
+              <Typography component="p">{item.content}</Typography>
+            </CardContent>
+
+            <CardActions>
+              <IconButton
+                variant="fab"
+                color="primary"
+                onClick={() => del(item.title)}
+              >
+                <DeleteIcon />
+              </IconButton>
+            </CardActions>
+          </Card>
+        </div>
+      );
+    });
+    return (
+      <div className={classes.mainDiv}>
+        <Button className={classes.photoAddButton} onClick={add}>
+          Add New Image
+        </Button>
+        <div className="photoList">{fixedPhotos}</div>
+      </div>
+    );
+  }
+}
+
+export default withStyles(photoList_styles)(photoList);
