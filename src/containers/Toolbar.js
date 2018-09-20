@@ -4,8 +4,14 @@ import { Component } from "react";
 import { connect } from "react-redux";
 //Components
 import ToolbarButton from "../components/ToolbarButton";
+
 //Constans
-import { COUNTER_BLOCK, FORM_BLOCK, PHOTO_BLOCK } from "../constants/const";
+import {
+  COUNTER_BLOCK,
+  FORM_BLOCK,
+  PHOTO_BLOCK,
+  TODO_BLOCK
+} from "../constants/const";
 
 class Toolbar extends Component {
   render() {
@@ -26,6 +32,8 @@ class Toolbar extends Component {
           OnButtonClicked={this.props.formlist}
         />
         <br />
+        <ToolbarButton buttonText="Todo" OnButtonClicked={this.props.todo} />
+        <br />
       </div>
     );
   }
@@ -45,6 +53,9 @@ const mapDispatchToProps = dispatch => {
     },
     photolist: () => {
       dispatch({ type: PHOTO_BLOCK });
+    },
+    todo: () => {
+      dispatch({ type: TODO_BLOCK });
     }
   };
 };

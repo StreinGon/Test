@@ -24,7 +24,6 @@ class photoList extends Component {
     this.AddPhoto = this.AddPhoto.bind(this);
     this.DeletePhoto = this.DeletePhoto.bind(this);
   }
-
   DeletePhoto(ttl) {
     this.setState({
       photos: this.state.photos.filter(photo => photo.title !== ttl)
@@ -80,7 +79,7 @@ class photoList extends Component {
       );
     });
     return (
-      <div className={classes.mainDiv}>
+      <div className={this.props.className}>
         <Button className={classes.photoAddButton} onClick={add}>
           Add New Image
         </Button>

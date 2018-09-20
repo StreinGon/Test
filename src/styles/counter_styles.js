@@ -11,11 +11,6 @@ const counter_styles = theme => ({
     width: 250,
     margin: 3,
     color: "blue"
-  },
-  counterGrid: {
-    padding: "0 200px",
-    height: 240,
-    width: 250
   }
 });
 

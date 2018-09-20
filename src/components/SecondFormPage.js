@@ -1,6 +1,6 @@
 //React-redux
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { compose } from "redux";
 //material-ui
 import { withStyles } from "@material-ui/core/styles";
@@ -19,7 +19,4 @@ class SecondFormPage extends Component {
     );
   }
 }
-export default compose(
-  withRouter,
-  withStyles(second_form_page_styles)
-)(SecondFormPage);
+export default compose(withStyles(second_form_page_styles))(SecondFormPage);

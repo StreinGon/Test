@@ -1,4 +1,9 @@
-import { COUNTER_BLOCK, FORM_BLOCK, PHOTO_BLOCK } from "../constants/const";
+import {
+  COUNTER_BLOCK,
+  FORM_BLOCK,
+  PHOTO_BLOCK,
+  TODO_BLOCK
+} from "../constants/const";
 export default (state = COUNTER_BLOCK, action) => {
   switch (action.type) {
     case COUNTER_BLOCK: {
@@ -11,6 +16,10 @@ export default (state = COUNTER_BLOCK, action) => {
     }
     case PHOTO_BLOCK: {
       state = PHOTO_BLOCK;
+      return state;
+    }
+    case TODO_BLOCK: {
+      state = TODO_BLOCK;
       return state;
     }
     default:

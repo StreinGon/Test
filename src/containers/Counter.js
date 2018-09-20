@@ -16,12 +16,20 @@ import * as counterActions from "../actions/counterActions";
 //Styles
 import counter_styles from "../styles/counter_styles.js";
 //constants
-import { INC, DECR } from "../constants/const";
+
 class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.AsyncInc = this.AsyncInc.bind(this);
+  }
+  AsyncInc() {
+    setTimeout(this.props.Increment, 1000);
+    clearTimeout();
+  }
   render() {
     const { classes } = this.props;
     return (
-      <Grid className={classes.counterGrid}>
+      <Grid className={this.props.className}>
         <Typography
           className={classes.counterTest}
           align="left"
@@ -46,7 +54,7 @@ class Counter extends Component {
         <Button
           className={classes.counterB}
           variant="extendedFab"
-          onClick={this.props.AsyncInc}
+          onClick={this.AsyncInc}
         >
           Async Inc
         </Button>
@@ -62,11 +70,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = dispatch => {
   return {
     Increment: bindActionCreators(counterActions.Increment, dispatch),
-    Decrement: bindActionCreators(counterActions.Decrement, dispatch),
-    AsyncInc: () => {
-      setTimeout(counterActions.Increment, 1000);
-      clearTimeout();
-    }
+    Decrement: bindActionCreators(counterActions.Decrement, dispatch)
   };
 };
 
