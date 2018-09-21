@@ -12,18 +12,18 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 //Actions
-import * as counterActions from "../actions/counterActions";
+import * as counterActions from "D:/Projects/JS/src/actions/counterActions";
 //Styles
-import counter_styles from "../styles/counter_styles.js";
+import counter_styles from "../../styles/counter_styles.js";
 //constants
 
 class Counter extends Component {
   constructor(props) {
     super(props);
-    this.AsyncInc = this.AsyncInc.bind(this);
+    this.asyncInc = this.asyncInc.bind(this);
   }
-  AsyncInc() {
-    setTimeout(this.props.Increment, 1000);
+  asyncInc() {
+    setTimeout(this.props.increment, 1000);
     clearTimeout();
   }
   render() {
@@ -40,21 +40,21 @@ class Counter extends Component {
         <Button
           className={classes.counterB}
           variant="extendedFab"
-          onClick={this.props.Increment}
+          onClick={this.props.increment}
         >
           Increment
         </Button>
         <Button
           className={classes.counterB}
           variant="extendedFab"
-          onClick={this.props.Decrement}
+          onClick={this.props.decrement}
         >
           Decrement
         </Button>
         <Button
           className={classes.counterB}
           variant="extendedFab"
-          onClick={this.AsyncInc}
+          onClick={this.asyncInc}
         >
           Async Inc
         </Button>
@@ -69,8 +69,8 @@ function mapStateToProps(state) {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    Increment: bindActionCreators(counterActions.Increment, dispatch),
-    Decrement: bindActionCreators(counterActions.Decrement, dispatch)
+    increment: bindActionCreators(counterActions.increment, dispatch),
+    decrement: bindActionCreators(counterActions.decrement, dispatch)
   };
 };
 

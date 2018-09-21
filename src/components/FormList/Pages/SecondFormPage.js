@@ -5,7 +5,7 @@ import { compose } from "redux";
 //material-ui
 import { withStyles } from "@material-ui/core/styles";
 //Styles
-import second_form_page_styles from "../styles/second_form_page_styles";
+import second_form_page_styles from "../../../styles/second_form_page_styles";
 class SecondFormPage extends Component {
   render() {
     const { classes } = this.props;

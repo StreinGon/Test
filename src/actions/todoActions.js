@@ -1,19 +1,26 @@
-export const AddTodo = (task, id) => ({
-  type: "ADD_TODO",
+import {
+  ADD_TODO,
+  EXECUTE_TODO,
+  ALL,
+  ACTIVE,
+  COMPLETED
+} from "../constants/const";
+export const addTodo = (task, id) => ({
+  type: ADD_TODO,
   id,
   completed: false,
   task
 });
-export const ExecuteTodo = id => ({
-  type: "TOGGLE_TODO",
+export const executeTodo = id => ({
+  type: EXECUTE_TODO,
   id
 });
-export const FilterALL = () => ({
-  type: "ALL"
+export const filterALL = () => ({
+  type: ALL
 });
-export const FilterActive = () => ({
-  type: "ACTIVE"
+export const filterActive = () => ({
+  type: ACTIVE
 });
-export const FilterCompleted = () => ({
-  type: "COMPLETED"
+export const filterCompleted = () => ({
+  type: COMPLETED
 });

@@ -4,13 +4,13 @@ const counter_styles = theme => ({
     width: 150,
     margin: 3,
     color: "yellow",
-    background: "blue"
+    background: "black"
   },
   counterTest: {
     height: 40,
     width: 250,
     margin: 3,
-    color: "blue"
+    color: "yellow"
   }
 });
 

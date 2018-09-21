@@ -1,11 +1,12 @@
-const filter = (state = "ALL", action) => {
+import { ALL, ACTIVE, COMPLETED } from "../constants/const";
+const filter = (state = ALL, action) => {
   switch (action.type) {
-    case "ALL":
-      return "ALL";
-    case "ACTIVE":
-      return "ACTIVE";
-    case "COMPLETED":
-      return "COMPLETED";
+    case ALL:
+      return ALL;
+    case ACTIVE:
+      return ACTIVE;
+    case COMPLETED:
+      return COMPLETED;
     default:
       return state;
   }

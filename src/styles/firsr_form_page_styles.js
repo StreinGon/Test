@@ -1,7 +1,8 @@
 export const firsr_form_page_styles = theme => ({
   Form: {
     position: "relative",
-    left: 15
+    left: 15,
+    width: 300
   }
 });
 

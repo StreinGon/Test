@@ -1,6 +1,7 @@
+import { ADD_TODO, EXECUTE_TODO } from "../constants/const";
 const todos = (state = [], action) => {
   switch (action.type) {
-    case "ADD_TODO":
+    case ADD_TODO:
       return [
         ...state,
         {
@@ -9,7 +10,7 @@ const todos = (state = [], action) => {
           completed: false
         }
       ];
-    case "TOGGLE_TODO":
+    case EXECUTE_TODO:
       return state.map(
         todo =>
           todo.id === action.id ? { ...todo, completed: !todo.completed } : todo

@@ -6,7 +6,7 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 //styles
-import firsr_form_page_styles from "../styles/firsr_form_page_styles";
+import firsr_form_page_styles from "../../../styles/firsr_form_page_styles";
 class FirstFormPage extends React.Component {
   constructor(props) {
     super(props);
@@ -15,10 +15,10 @@ class FirstFormPage extends React.Component {
     this.onZagChange = this.onZagChange.bind(this);
     this.onCostChange = this.onCostChange.bind(this);
     this.onCountChange = this.onCountChange.bind(this);
-    this.onClicked = this.onClicked.bind(this);
+    this.handleSubmitClicked = this.handleSubmitClicked.bind(this);
   }
 
-  onClicked(event) {
+  handleSubmitClicked(event) {
     if (
       this.state.zag !== "" &&
       this.state.opis !== "" &&
@@ -54,7 +54,7 @@ class FirstFormPage extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <form onSubmit={this.onClicked} className={classes.Form}>
+      <form onSubmit={this.handleSubmitClicked} className={classes.Form}>
         <TextField
           label="Заголовок"
           name="zag"

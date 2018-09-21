@@ -10,10 +10,10 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 //styles
-import "../styles/photoList.css";
-import photoList_styles from "../styles/photoList_styles";
+import "../../styles/photoList.css";
+import photoList_styles from "../../styles/photoList_styles";
 //photos
-import ArrayOfPhotos from "../photos/photos";
+import ArrayOfPhotos from "../../photos/photos";
 
 class photoList extends Component {
   constructor(props) {
@@ -21,15 +21,15 @@ class photoList extends Component {
     this.state = {
       photos: ArrayOfPhotos
     };
-    this.AddPhoto = this.AddPhoto.bind(this);
-    this.DeletePhoto = this.DeletePhoto.bind(this);
+    this.addPhoto = this.addPhoto.bind(this);
+    this.deletePhoto = this.deletePhoto.bind(this);
   }
-  DeletePhoto(ttl) {
+  deletePhoto(ttl) {
     this.setState({
       photos: this.state.photos.filter(photo => photo.title !== ttl)
     });
   }
-  AddPhoto() {
+  addPhoto() {
     const img1 = {
       title: prompt("Введите название"),
       Photo: prompt("Введите url"),
@@ -50,8 +50,8 @@ class photoList extends Component {
   }
   render() {
     const { classes } = this.props;
-    const del = this.DeletePhoto;
-    const add = this.AddPhoto;
+    const del = this.deletePhoto;
+    const add = this.addPhoto;
     const check = this.state.photos;
     const fixedPhotos = check.map(function(item, index) {
       return (

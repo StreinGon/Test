@@ -1,12 +1,13 @@
+import { ALL, ACTIVE, COMPLETED } from "../constants/const";
 export const getVisibleTodos = (todos, filter) => {
   switch (filter) {
-    case "ALL":
+    case ALL:
       return todos;
-    case "ACTIVE":
-      return todos.filter(t => !t.completed);
-    case "COMPLETED":
-      return todos.filter(t => t.completed);
+    case ACTIVE:
+      return todos.filter(todo => !todo.completed);
+    case COMPLETED:
+      return todos.filter(todo => todo.completed);
     default:
-      throw new Error("Unknown filter: " + filter);
+      return todos;
   }
 };

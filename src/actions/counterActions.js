@@ -1,8 +1,8 @@
 import { INC, DECR } from "../constants/const";
 
-export const Increment = () => ({
+export const increment = () => ({
   type: INC
 });
-export const Decrement = () => ({
+export const decrement = () => ({
   type: DECR
 });
