@@ -28,7 +28,7 @@ class FirstFormPage extends React.Component {
       isFinite(this.state.count)
     ) {
       this.props.history.push(
-        `${this.state.zag}${this.state.opis}${this.state.cost}${
+        `Form/${this.state.zag}${this.state.opis}${this.state.cost}${
           this.state.count
         }`
       );

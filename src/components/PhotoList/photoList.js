@@ -9,6 +9,8 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+//Components,containers
+import AlertDialogs from "../Dialogs/AlertDialogs";
 //styles
 import "../../styles/photoList.css";
 import photoList_styles from "../../styles/photoList_styles";
@@ -45,7 +47,6 @@ class photoList extends Component {
     ) {
       this.setState({ photos: this.state.photos.concat(img1) });
     } else {
-      alert("Одно из значений введенно не корректно");
     }
   }
   render() {
@@ -64,7 +65,6 @@ class photoList extends Component {
               </Typography>
               <Typography component="p">{item.content}</Typography>
             </CardContent>
-
             <CardActions>
               <IconButton
                 variant="fab"

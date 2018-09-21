@@ -14,7 +14,7 @@ class SecondFormPage extends Component {
       <div className={classes.SecondFormPage}>
         <h2>Итог</h2>
         <h3>{this.props.location.pathname}</h3>
-        <Link to="/">Close</Link>
+        <Link to="/Form">Close</Link>
       </div>
     );
   }
