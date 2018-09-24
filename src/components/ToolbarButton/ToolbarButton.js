@@ -2,19 +2,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 //material-ui
-import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
+
 import MenuItem from "@material-ui/core/MenuItem";
 //styles
-import toolbar_styles from "../../styles/toolbar_styles";
+import "../../styles/toolbar_styles.scss";
 class ToolbarButton extends Component {
   render() {
-    const { buttonText, onButtonClicked, classes } = this.props;
+    const { buttonText, onButtonClicked } = this.props;
     return (
       <MenuItem
         component={Link}
         to={`/${buttonText}`}
-        className={classes.Toolbutton}
+        className="Toolbutton"
         variant="raised"
         onClick={onButtonClicked}
       >
@@ -24,4 +23,4 @@ class ToolbarButton extends Component {
   }
 }
 
-export default withStyles(toolbar_styles)(ToolbarButton);
+export default ToolbarButton;

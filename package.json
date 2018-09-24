@@ -10,6 +10,7 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-redux": "^5.0.7",
+    "react-redux-firebase": "^2.1.8",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
@@ -17,6 +18,8 @@
     "redux-form": "^7.4.2",
     "redux-form-website-template": "0.0.123",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.14.0",
+    "scss": "^0.2.4",
     "typeface-roboto": "0.0.54",
     "yarn": "^1.9.4"
   },
@@ -29,6 +32,8 @@
   "devDependencies": {
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
-    "prettier": "^1.14.2"
+    "node-sass": "^4.9.3",
+    "prettier": "^1.14.2",
+    "sass-loader": "^7.1.0"
   }
 }

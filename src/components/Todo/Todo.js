@@ -2,19 +2,18 @@
 import React from "react";
 import { Component } from "react";
 //material-ui
-import { withStyles } from "@material-ui/core/styles";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 //Styles
-import todo_styles from "../../styles/todo_styles.js";
+import "../../styles/todo_styles.scss";
 class Todo extends Component {
   render() {
-    const { todos, classes } = this.props;
+    const { todos } = this.props;
     const check = todos;
     const toggle = this.props.execute;
     const fixedPhotos = check.map(function(item, index) {
       return (
-        <div>
+        <div key={`ASf;kc_${index}`}>
           <FormControlLabel
             control={
               <Checkbox
@@ -22,14 +21,13 @@ class Todo extends Component {
                 checked={item.completed}
               />
             }
-            key={`ToDo${index}`}
             label={item.task}
-            className={item.completed ? classes.formControlLabel_style : ""}
+            className={item.completed ? "formControlLabel_style" : ""}
           />
         </div>
       );
     });
-    return <div className={classes.todo_main_div}>{fixedPhotos}</div>;
+    return <div className="todo_main_div">{fixedPhotos}</div>;
   }
 }
-export default withStyles(todo_styles)(Todo);
+export default Todo;

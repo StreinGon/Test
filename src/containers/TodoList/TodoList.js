@@ -5,14 +5,13 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { compose } from "redux";
 //material-ui
-import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 //Components
 import Todo from "../../components/Todo/Todo";
 //Actions
 import * as todoActions from "../../actions/todoActions";
 //Styles
-import todoList_styles from "../../styles/todoList_styles.js";
+import "../../styles/todoList_styles.scss";
 let countOfTodos = 3;
 class TodoList extends Component {
   constructor(props) {
@@ -30,7 +29,6 @@ class TodoList extends Component {
     }
   }
   render() {
-    const { classes } = this.props;
     return (
       <div className={this.props.className}>
         <input
@@ -44,7 +42,7 @@ class TodoList extends Component {
           name="AddTodo"
           value="Submit"
           onClick={this.handleAddTodoClicked}
-          className={classes.todoButton_style}
+          className="todoButton_style"
         >
           Add Todo
         </Button>
@@ -67,7 +65,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default compose(
-  withStyles(todoList_styles),
   connect(
     null,
     mapDispatchToProps

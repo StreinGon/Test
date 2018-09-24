@@ -1,17 +1,15 @@
 //React-redux
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { compose } from "redux";
+
 //material-ui
-import { withStyles } from "@material-ui/core/styles";
+
 //Styles
-import second_form_page_styles from "../../../styles/second_form_page_styles";
+import "../../../styles/second_form_page_styles.scss";
 class SecondFormPage extends Component {
   render() {
-    const { classes } = this.props;
-
     return (
-      <div className={classes.SecondFormPage}>
+      <div className="secondFormPage">
         <h2>Итог</h2>
         <h3>{this.props.location.pathname}</h3>
         <Link to="/Form">Close</Link>
@@ -19,4 +17,4 @@ class SecondFormPage extends Component {
     );
   }
 }
-export default compose(withStyles(second_form_page_styles))(SecondFormPage);
+export default SecondFormPage;

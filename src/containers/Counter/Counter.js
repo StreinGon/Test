@@ -7,14 +7,13 @@ import { bindActionCreators } from "redux";
 
 //material-ui
 import "typeface-roboto";
-import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 //Actions
 import * as counterActions from "D:/Projects/JS/src/actions/counterActions";
 //Styles
-import counter_styles from "../../styles/counter_styles.js";
+import "../../styles/counter_styles.scss";
 //constants
 
 class Counter extends Component {
@@ -27,32 +26,27 @@ class Counter extends Component {
     clearTimeout();
   }
   render() {
-    const { classes } = this.props;
     return (
       <Grid className={this.props.className}>
-        <Typography
-          className={classes.counterTest}
-          align="left"
-          variant="display1"
-        >
+        <Typography className="counterTest">
           Counter {this.props.counter}
         </Typography>
         <Button
-          className={classes.counterB}
+          className="counterB"
           variant="extendedFab"
           onClick={this.props.increment}
         >
           Increment
         </Button>
         <Button
-          className={classes.counterB}
+          className="counterB"
           variant="extendedFab"
           onClick={this.props.decrement}
         >
           Decrement
         </Button>
         <Button
-          className={classes.counterB}
+          className="counterB"
           variant="extendedFab"
           onClick={this.asyncInc}
         >
@@ -75,7 +69,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default compose(
-  withStyles(counter_styles),
   connect(
     mapStateToProps,
     mapDispatchToProps

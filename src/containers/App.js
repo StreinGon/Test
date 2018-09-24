@@ -6,7 +6,7 @@ import { compose } from "redux";
 import { withRouter } from "react-router-dom";
 import { Route } from "react-router-dom";
 //material-ui
-import { withStyles } from "@material-ui/core/styles";
+
 import CircularProgress from "@material-ui/core/CircularProgress";
 //components,containers
 import PhotoList from "../components/PhotoList/photoList";
@@ -15,14 +15,13 @@ import Counter from "../containers/Counter/Counter";
 import FormList from "../components/FormList/FormList";
 import TodoList from "../containers/TodoList/TodoList";
 //styles
-import main_styles from "../styles/main_styles";
+import "../styles/main_styles.scss";
 //constans
 import { FETCHING } from "../constants/const";
 import { getVisibleTodos } from "../components/Filter";
 
 class App extends Component {
   render() {
-    const { classes } = this.props;
     return (
       <div>
         <MyToolBar />
@@ -32,8 +31,8 @@ class App extends Component {
             <Counter
               className={
                 this.props.toolbar === FETCHING
-                  ? classes.disableElement
-                  : classes.counterGrid
+                  ? "disableElement"
+                  : "counterGrid"
               }
             />
           )}
@@ -44,8 +43,8 @@ class App extends Component {
             <PhotoList
               className={
                 this.props.toolbar === FETCHING
-                  ? classes.disableElement
-                  : classes.mainDivOfPhotoList
+                  ? "disableElement"
+                  : "mainDivOfPhotoList"
               }
             />
           )}
@@ -55,9 +54,7 @@ class App extends Component {
           render={() => (
             <FormList
               className={
-                this.props.toolbar === FETCHING
-                  ? classes.disableElement
-                  : classes.formList
+                this.props.toolbar === FETCHING ? "disableElement" : "formList"
               }
             />
           )}
@@ -67,9 +64,7 @@ class App extends Component {
           render={() => (
             <TodoList
               className={
-                this.props.toolbar === FETCHING
-                  ? classes.disableElement
-                  : classes.todoList
+                this.props.toolbar === FETCHING ? "disableElement" : "todoList"
               }
               todoList={getVisibleTodos(this.props.todos, this.props.filter)}
             />
@@ -78,9 +73,7 @@ class App extends Component {
         <CircularProgress
           size={150}
           className={
-            this.props.toolbar === FETCHING
-              ? classes.progress
-              : classes.disableElement
+            this.props.toolbar === FETCHING ? "progress" : "disableElement"
           }
         />
       </div>
@@ -97,6 +90,5 @@ function mapStateToProps(state) {
 }
 export default compose(
   withRouter,
-  withStyles(main_styles),
   connect(mapStateToProps)
 )(App);

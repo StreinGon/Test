@@ -2,11 +2,11 @@
 import React from "react";
 
 //material-ui
-import { withStyles } from "@material-ui/core/styles";
+
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 //styles
-import firsr_form_page_styles from "../../../styles/firsr_form_page_styles";
+import "../../../styles/firsr_form_page_styles.scss";
 class FirstFormPage extends React.Component {
   constructor(props) {
     super(props);
@@ -52,9 +52,8 @@ class FirstFormPage extends React.Component {
     this.setState({ count: event.target.value });
   }
   render() {
-    const { classes } = this.props;
     return (
-      <form onSubmit={this.handleSubmitClicked} className={classes.Form}>
+      <form onSubmit={this.handleSubmitClicked} className="Form">
         <TextField
           label="Заголовок"
           name="zag"
@@ -89,4 +88,4 @@ class FirstFormPage extends React.Component {
   }
 }
 
-export default withStyles(firsr_form_page_styles)(FirstFormPage);
+export default FirstFormPage;
