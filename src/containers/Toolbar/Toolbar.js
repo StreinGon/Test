@@ -14,7 +14,7 @@ import * as toolbarActions from "../../actions/toolbarActions";
 class MyToolbar extends Component {
   render() {
     return (
-      <MenuList style={{ width: 200 }}>
+      <MenuList className="disableElement" style={{ width: 200 }}>
         <ToolbarButton
           buttonText="Counter"
           onButtonClicked={this.props.counter}

@@ -3,36 +3,64 @@
   left: 750px;
   top: 150px;
 }
-.disableElement {
-  display: none;
-}
+
 .counterGrid {
-  height: 240px;
-  width: 250px;
+  max-height: 150px;
+  max-width: 250px;
   position: relative;
-  top: 50px;
-  left: 750px;
+  top: 12px;
+  left: 450px;
+  outline: 3px red;
+  outline-style: solid;
 }
 .mainDivOfPhotoList {
-  position: relative;
-  left: 750px;
+  position: absolute;
   background: white;
-  width: 400px;
-  top: -50px;
+  max-width: 400px;
+  max-height: 660px;
+  left: 1335px;
+  top: 20px;
+  outline: 3px red;
+  outline-style: solid;
 }
-.todoList {
-  background: white;
-  height: 540px;
-  width: 600px;
-  position: relative;
-  left: 650px;
-  top: -50px;
+@media only screen and (orientation: landscape) {
+  .disableElement {
+    display: none;
+  }
+  .todoList {
+    background: white;
+    top: 10%;
+    min-height: 240px;
+    min-width: 200px;
+    width: 100%;
+    height: 90%;
+    margin-left: -1.36%;
+    position: absolute;
+  }
 }
+@media only screen and (orientation: portrait) {
+  .disableElement {
+    display: none;
+  }
+  .todoList {
+    background: white;
+    top: 5.5%;
+    min-height: 240px;
+    min-width: 100px;
+    width: 100%;
+    height: 94.5%;
+    margin-left: -2.5%;
+    position: absolute;
+  }
+}
+
 .formList {
   background: white;
-  height: 240px;
-  width: 300px;
-  position: relative;
-  left: 750px;
-  top: -50px;
+  max-height: 240px;
+  max-width: 300px;
+  position: absolute;
+  left: 162px;
+  top: 530px;
+  outline: 3px red;
+  outline-style: solid;
 }

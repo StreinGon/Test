@@ -1,9 +1,42 @@
-.todo_main_div {
-  overflow: auto;
-  position: relative;
-  left: 70px;
-  height: 460px;
-  width: 530px;
+@media only screen and (orientation: landscape) {
+  .todo_main_div {
+    overflow: auto;
+    position: relative;
+    left: 5%;
+    width: 95%;
+    height: 70%;
+  }
+  .MENU {
+    height: 10%;
+    max-height: 150px;
+  }
+  .menuButton {
+    position: relative;
+    margin: 1 auto;
+    width: 10%;
+  }
+}
+@media only screen and (orientation: portrait) {
+  .todo_main_div {
+    overflow: auto;
+    position: relative;
+    left: 30px;
+    width: 95%;
+    height: 85%;
+  }
+  .MENU {
+    height: 5.7%;
+    max-height: 150px;
+  }
+  .menuButton {
+    width: 10%;
+  }
+}
+@media only screen and (min-device-width: 768px) and (min-device-height: 768px) {
+  .MENU {
+    height: 5.7%;
+    max-height: 150px;
+  }
 }
 .formControlLabel_style {
   text-decoration: line-through;

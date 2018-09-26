@@ -2,23 +2,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 //material-ui
+import Tab from "@material-ui/core/Tab";
 
-import MenuItem from "@material-ui/core/MenuItem";
 //styles
-import "../../styles/toolbar_styles.scss";
+import "../../styles/style.css";
 class ToolbarButton extends Component {
   render() {
-    const { buttonText, onButtonClicked } = this.props;
+    const { buttonText, onButtonClicked, handle } = this.props;
     return (
-      <MenuItem
+      <Tab
+        label={`${buttonText}`}
         component={Link}
         to={`/${buttonText}`}
         className="Toolbutton"
         variant="raised"
-        onClick={onButtonClicked}
-      >
-        {buttonText}
-      </MenuItem>
+        onClick={onButtonClicked && handle}
+      />
     );
   }
 }

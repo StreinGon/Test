@@ -11,7 +11,7 @@ import Todo from "../../components/Todo/Todo";
 //Actions
 import * as todoActions from "../../actions/todoActions";
 //Styles
-import "../../styles/todoList_styles.scss";
+import "../../styles/style.css";
 let countOfTodos = 3;
 class TodoList extends Component {
   constructor(props) {
@@ -34,22 +34,43 @@ class TodoList extends Component {
         <input
           ref={input => (this.input = input)}
           name="AddTodo"
-          label="ToDo"
-          style={{ margin: 5 }}
+          style={{ marginLeft: 15, marginTop: 10 }}
         />
         <Button
           type="reset"
           name="AddTodo"
           value="Submit"
           onClick={this.handleAddTodoClicked}
-          className="todoButton_style"
+          style={{ background: "lightgreen", top: 5 }}
         >
           Add Todo
         </Button>
         <Todo todos={this.props.todoList} execute={this.props.executeTodo} />
-        <Button onClick={this.props.all}>All</Button>
-        <Button onClick={this.props.active}>Active</Button>
-        <Button onClick={this.props.completed}>Completed</Button>
+
+        <Button
+          onClick={this.props.all}
+          variant="outlined"
+          color="secondary"
+          style={{ left: 20 }}
+        >
+          All
+        </Button>
+        <Button
+          onClick={this.props.active}
+          variant="outlined"
+          color="secondary"
+          style={{ left: 20 }}
+        >
+          Active
+        </Button>
+        <Button
+          onClick={this.props.completed}
+          variant="outlined"
+          color="secondary"
+          style={{ left: 20 }}
+        >
+          Completed
+        </Button>
       </div>
     );
   }

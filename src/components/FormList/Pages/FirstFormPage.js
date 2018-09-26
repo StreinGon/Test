@@ -6,7 +6,7 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 //styles
-import "../../../styles/firsr_form_page_styles.scss";
+import "../../../styles/style.css";
 class FirstFormPage extends React.Component {
   constructor(props) {
     super(props);

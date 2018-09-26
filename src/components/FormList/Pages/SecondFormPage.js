@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //material-ui
 
 //Styles
-import "../../../styles/second_form_page_styles.scss";
+import "../../../styles/style.css";
 class SecondFormPage extends Component {
   render() {
     return (

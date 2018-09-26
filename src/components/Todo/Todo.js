@@ -5,7 +5,7 @@ import { Component } from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 //Styles
-import "../../styles/todo_styles.scss";
+import "../../styles/style.css";
 class Todo extends Component {
   render() {
     const { todos } = this.props;
