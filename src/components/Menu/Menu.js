@@ -1,45 +1,65 @@
 import React from "react";
-import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
+import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import List from "@material-ui/core/List";
+import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
+import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+
 class MyMenu extends React.Component {
   state = {
-    anchorEl: null
+    open: false,
+    anchor: "left"
   };
 
-  handleClick = event => {
-    this.setState({ anchorEl: event.currentTarget });
+  handleDrawerOpen = () => {
+    this.setState({ open: true });
   };
 
-  handleClose = () => {
-    this.setState({ anchorEl: null });
+  handleDrawerClose = () => {
+    this.setState({ open: false });
   };
-
   render() {
-    const { anchorEl } = this.state;
+    const { open } = this.state;
+    const drawer = (
+      <Drawer variant="persistent" open={open}>
+        <div>
+          <IconButton onClick={this.handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <Divider />
+
+        <Divider />
+        <Typography variant="title" color="inherit">
+          Drawer
+        </Typography>
+      </Drawer>
+    );
 
     return (
-      <AppBar className="MENU">
-        <IconButton
-          aria-owns={anchorEl ? "menu" : null}
-          aria-haspopup="true"
-          onClick={this.handleClick}
-        >
-          <MenuIcon />
-        </IconButton>
-        <Menu
-          id="menu"
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={this.handleClose}
-        >
-          <MenuItem onClick={this.handleClose}>ToDo</MenuItem>
-          <MenuItem onClick={this.handleClose}>ToDo</MenuItem>
-          <MenuItem onClick={this.handleClose}>ToDo</MenuItem>
-        </Menu>
-      </AppBar>
+      <div>
+        <div>
+          <AppBar className="MENU">
+            <Toolbar>
+              <IconButton
+                color="inherit"
+                aria-label="Open drawer"
+                onClick={this.handleDrawerOpen}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="title" color="inherit">
+                Menu
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          {drawer}
+        </div>
+      </div>
     );
   }
 }
