@@ -1,66 +1,48 @@
-.progress {
+.todoList {
+  position: absolute;
+  transform: translate(+50%) !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 50% !important;
+  min-height: 500px;
+  background: rgb(255, 255, 255);
+}
+.todo_main_div {
+  overflow: auto;
   position: relative;
-  left: 750px;
-  top: 150px;
+  width: 100%;
+  height: 70%;
+}
+.formControlLabel_style {
+  text-decoration: line-through;
 }
 
-.counterGrid {
-  max-height: 150px;
-  max-width: 250px;
+.TextFieldTodo {
+  flex: 1 1 auto;
+  margin-left: 1% !important;
+  margin-right: 1% !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.AddButton {
+  flex: 0.1 1 auto;
+  margin-right: 1% !important;
+  height: 3.3rem !important;
+}
+.InputDiv {
+  align-items: center;
+  display: flex !important;
   position: relative;
-  top: 12px;
-  left: 450px;
-  outline: 3px red;
-  outline-style: solid;
+  width: 100%;
 }
-.mainDivOfPhotoList {
-  position: absolute;
-  background: white;
-  max-width: 400px;
-  max-height: 660px;
-  left: 1335px;
-  top: 20px;
-  outline: 3px red;
-  outline-style: solid;
+.FilterDiv {
+  display: flex !important;
+  flex-direction: row;
 }
-@media only screen and (orientation: landscape) {
-  .disableElement {
-    display: none;
-  }
-  .todoList {
-    background: white;
-    top: 20%;
-    min-height: 240px;
-    min-width: 200px;
-    width: 100%;
-    height: 80%;
-    margin-left: -1.36%;
-    position: absolute;
-  }
+.FilterButton {
 }
-@media only screen and (orientation: portrait) {
-  .disableElement {
-    display: none;
-  }
-  .todoList {
-    background: white;
-    top: 15.5%;
-    min-height: 240px;
-    min-width: 100px;
-    width: 100%;
-    height: 84.5%;
-    margin-left: -2.5%;
-    position: absolute;
-  }
-}
-
-.formList {
-  background: white;
-  max-height: 240px;
-  max-width: 300px;
-  position: absolute;
-  left: 162px;
-  top: 530px;
-  outline: 3px red;
-  outline-style: solid;
+.todo {
+  margin-left: 10px;
 }
