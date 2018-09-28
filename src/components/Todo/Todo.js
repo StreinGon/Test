@@ -13,7 +13,10 @@ class Todo extends Component {
     const toggle = this.props.execute;
     const fixedPhotos = check.map(function(item, index) {
       return (
-        <div key={`ASf;kc_${index}`} className="todo">
+        <div
+          key={`ASf;kc_${index}`}
+          className={item.completed ? "test" : "todo"}
+        >
           <FormControlLabel
             label={item.task}
             className={item.completed ? "formControlLabel_style" : ""}

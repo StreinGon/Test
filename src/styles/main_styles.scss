@@ -1,24 +1,46 @@
-.todoList {
-  position: absolute;
-  transform: translate(+50%) !important;
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-  height: 50% !important;
-  min-height: 500px;
-  background: rgb(255, 255, 255);
+@media screen and (max-width: 823px) {
+  .todoList {
+    padding: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    display: flex !important;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100% !important;
+    background: rgb(255, 255, 255) !important;
+  }
+}
+@media screen and (min-width: 824px) {
+  .todoList {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%) !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    height: 70% !important;
+    min-height: 500px;
+    background: rgb(255, 255, 255);
+  }
 }
 .todo_main_div {
+  margin-top: 2%;
   overflow: auto;
   position: relative;
   width: 100%;
-  height: 70%;
+  height: 80%;
 }
 .formControlLabel_style {
   text-decoration: line-through;
 }
-
+.Typ {
+  margin-left: 50% !important;
+}
 .TextFieldTodo {
   flex: 1 1 auto;
   margin-left: 1% !important;
@@ -27,22 +49,41 @@
   margin-bottom: 0 !important;
 }
 .AddButton {
-  flex: 0.1 1 auto;
+  flex: 0.1 2 auto;
   margin-right: 1% !important;
+
   height: 3.3rem !important;
 }
 .InputDiv {
+  margin: 1% !important;
   align-items: center;
   display: flex !important;
   position: relative;
-  width: 100%;
+  width: 99%;
 }
 .FilterDiv {
-  display: flex !important;
-  flex-direction: row;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.test {
+  background: lightgreen;
+  background-size: 100%;
+  margin-left: 1% !important;
+  border: 4px double black; /* Параметры границы */
+  padding: 10px; /* Поля вокруг текста */
 }
 .FilterButton {
+  margin: 1% !important;
+  flex: 2 2 auto;
+  background: rgb(255, 174, 0) !important;
+  color: white !important;
+  border-radius: 0 !important;
 }
 .todo {
-  margin-left: 10px;
+  border: 4px double black; /* Параметры границы */
+  padding: 10px; /* Поля вокруг текста */
+  background: lightgrey;
+  background-size: 100%;
+  margin-left: 1% !important;
 }

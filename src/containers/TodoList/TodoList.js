@@ -68,12 +68,10 @@ class TodoList extends Component {
             Add Todo
           </Button>
         </div>
-        <Todo todos={todoList} execute={this.props.executeTodo} />
         <div className="FilterDiv">
           <Button
             onClick={this.props.all}
             variant="contained"
-            color="secondary"
             className="FilterButton"
           >
             All
@@ -81,7 +79,6 @@ class TodoList extends Component {
           <Button
             onClick={this.props.active}
             variant="contained"
-            color="secondary"
             className="FilterButton"
           >
             Active
@@ -89,12 +86,12 @@ class TodoList extends Component {
           <Button
             onClick={this.props.completed}
             variant="contained"
-            color="secondary"
             className="FilterButton"
           >
             Completed
           </Button>
         </div>
+        <Todo todos={todoList} execute={this.props.executeTodo} />
       </div>
     );
   }
