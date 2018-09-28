@@ -2,14 +2,12 @@
   .todoList {
     padding: 0;
     left: 0;
-
     top: 0;
     bottom: 0;
     right: 0;
     position: absolute;
     display: flex !important;
     flex-direction: column;
-
     width: 100% !important;
     height: 100% !important;
     background: rgb(255, 255, 255) !important;
@@ -17,20 +15,35 @@
 }
 @media screen and (min-width: 824px) {
   .todoList {
+    margin-top: 2%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%) !important;
+    display: flex !important;
+    flex-direction: column;
+
+    width: 85%;
+    height: 85% !important;
+    min-height: 500px;
+    background: rgb(255, 255, 255);
+  }
+}
+@media screen and (min-width: 1024px) and (orientation: portrait) {
+  .todoList {
     position: absolute;
     left: 50%;
     transform: translate(-50%) !important;
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    width: 70%;
-    height: 70% !important;
+    width: 95%;
+    height: 95% !important;
     min-height: 500px;
     background: rgb(255, 255, 255);
   }
 }
 .todo_main_div {
-  margin-top: 2%;
+  margin-top: 3%;
   overflow: auto;
   position: relative;
   width: 100%;
@@ -67,14 +80,13 @@
 }
 .FilterDiv {
   display: flex;
-  flex-flow: row wrap;
+
   justify-content: space-around;
 }
 .test {
   margin-right: 1% !important;
   margin-left: 1% !important;
-  border: 4px double black;
-  background: rgb(118, 219, 71);
+  background: rgb(158, 212, 133) !important;
   padding: 10px;
 }
 .FilterButton {
@@ -87,7 +99,6 @@
 .todo {
   margin-right: 1% !important;
   margin-left: 1% !important;
-  border: 4px double black;
-  background: rgb(185, 179, 161);
+  background: rgb(255, 254, 254) !important;
   padding: 10px;
 }

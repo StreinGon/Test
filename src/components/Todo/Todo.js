@@ -4,6 +4,7 @@ import { Component } from "react";
 //material-ui
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import Card from "@material-ui/core/Card";
 //Styles
 import "../../styles/style.css";
 class Todo extends Component {
@@ -13,7 +14,7 @@ class Todo extends Component {
     const toggle = this.props.execute;
     const fixedPhotos = check.map(function(item, index) {
       return (
-        <div
+        <Card
           key={`ASf;kc_${index}`}
           className={item.completed ? "test" : "todo"}
         >
@@ -27,7 +28,7 @@ class Todo extends Component {
               />
             }
           />
-        </div>
+        </Card>
       );
     });
     return <div className="todo_main_div">{fixedPhotos}</div>;

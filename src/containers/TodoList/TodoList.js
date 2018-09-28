@@ -9,6 +9,10 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
+import CheckCircle from "@material-ui/icons/CheckCircle";
+import EventNote from "@material-ui/icons/EventNote";
+import CheckBoxOutlineBlank from "@material-ui/icons/CheckBoxOutlineBlank";
+
 //Components
 import Todo from "../../components/Todo/Todo";
 import { getVisibleTodos } from "../..//components/Filter";
@@ -74,6 +78,7 @@ class TodoList extends Component {
             variant="contained"
             className="FilterButton"
           >
+            <EventNote />
             All
           </Button>
           <Button
@@ -81,6 +86,7 @@ class TodoList extends Component {
             variant="contained"
             className="FilterButton"
           >
+            <CheckBoxOutlineBlank />
             Active
           </Button>
           <Button
@@ -88,6 +94,7 @@ class TodoList extends Component {
             variant="contained"
             className="FilterButton"
           >
+            <CheckCircle />
             Completed
           </Button>
         </div>
