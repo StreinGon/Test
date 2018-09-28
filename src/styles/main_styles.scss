@@ -55,8 +55,6 @@
   text-decoration: line-through;
 }
 .Typ {
-  left: 50% !important;
-  transform: translate(-50%) !important;
 }
 .TextFieldTodo {
   flex: 1 1 auto;
@@ -84,6 +82,7 @@
   justify-content: space-around;
 }
 .test {
+  margin-bottom: 2px;
   margin-right: 1% !important;
   margin-left: 1% !important;
   background: rgb(158, 212, 133) !important;
@@ -97,6 +96,7 @@
   border-radius: 0 !important;
 }
 .todo {
+  margin-bottom: 2px;
   margin-right: 1% !important;
   margin-left: 1% !important;
   background: rgb(255, 254, 254) !important;

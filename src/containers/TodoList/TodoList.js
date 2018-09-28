@@ -33,10 +33,11 @@ class TodoList extends Component {
     if (this.state.inputValue !== "") {
       countOfTodos = ++countOfTodos;
       this.props.addTodo(this.state.inputValue, countOfTodos);
-
+      this.setState({ inputValue: "" });
       event.preventDefault();
     } else {
       alert("Нельзя создать пустую задачу!");
+      this.setState({ inputValue: "" });
     }
   }
   render() {
@@ -51,13 +52,16 @@ class TodoList extends Component {
         </Typography>
         <div className="InputDiv">
           <TextField
+            value={this.state.inputValue}
             className="TextFieldTodo"
             label="New Task"
             placeholder="New Task"
             margin="normal"
             variant="outlined"
             name="AddTodo"
-            onChange={e => this.setState({ inputValue: e.target.value })}
+            onChange={e => {
+              this.setState({ inputValue: e.target.value });
+            }}
           />
           <Button
             className="AddButton"
