@@ -1,14 +1,5 @@
-export const COUNTER_BLOCK = "COUNTER";
-export const FORM_BLOCK = "FORMLIST";
-export const PHOTO_BLOCK = "PHOTOLIST";
-export const TODO_BLOCK = "TODOLIST";
-export const NONE = "none";
-export const INC = "INC";
-export const DECR = "DECR";
 export const ADD_TODO = "ADD_TODO";
 export const EXECUTE_TODO = "EXECUTE_TODO";
 export const ALL = "ALL";
 export const ACTIVE = "ACTIVE";
 export const COMPLETED = "COMPLETED";
-export const GET_ANOTHER_BLOCK_REQUEST = "GET_ANOTHER_BLOCK_REQUEST";
-export const FETCHING = "FETCHING";
